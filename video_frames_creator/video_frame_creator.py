@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import cv2
 import sys
+from frame_manager import FrameManager
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from video_scraper.video_manager import VideoManager, VideoMetadata, FrameMetadata
@@ -16,16 +17,13 @@ class VideoFrameMetaData(BaseModel):
 
 class VideoFrameCreator:
 
-    base_dir = os.path.dirname(__file__)
-    output_dir = os.path.join(base_dir, "videoframes")
-    frame_output_dir = os.path.join(output_dir, "frames")
-    frame_metadata_file_path = os.path.join(output_dir, "videoframes_metadata.csv")
-
     def __init__(self):
         if not os.path.exists(VideoManager.metadata_file_path):
             raise FileNotFoundError("Video Metadata file not found")
         self.video_metadata_file_path = VideoManager.metadata_file_path
         self.df_video_metadata = pd.read_csv(self.video_metadata_file_path)
+        self.frame_output_dir = FrameManager.get_output_dir()
+        self.frame_metadata_file_path = FrameManager.get_metadata_file_path()
         if os.path.exists(self.frame_metadata_file_path):
             self.df_frame_metadata = pd.read_csv(self.frame_metadata_file_path)
         else:
@@ -37,7 +35,7 @@ class VideoFrameCreator:
         return video_url in self.df_frame_metadata["url"].values
 
     def create_video_dataframes(self):
-        os.makedirs(VideoFrameCreator.frame_output_dir, exist_ok=True)
+        os.makedirs(self.frame_output_dir, exist_ok=True)
         for _, row in self.df_video_metadata.iterrows():
             if self.is_frame_exists(row["url"]):
                 print("Frames already exist for video:", row["title"])
@@ -52,7 +50,7 @@ class VideoFrameCreator:
             )
             for _, row in df.iterrows():
                 cv2.imwrite(
-                    f"{VideoFrameCreator.frame_output_dir}/{row['frame_filename']}",
+                    f"{self.frame_output_dir}/{row['frame_filename']}",
                     row["frame"],
                 )
             df.drop("frame", axis=1).to_csv(

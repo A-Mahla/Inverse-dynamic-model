@@ -103,9 +103,3 @@ class VideoManager:
                 cv2.CAP_PROP_POS_FRAMES, video.get(cv2.CAP_PROP_POS_FRAMES) + interval
             )
         return frames
-
-
-if __name__ == "__main__":
-    VideoManager.get_video_frame(
-        "Create a project folder (Visual Studio Code), create a file and open the Terminal (2⧸5).mp4"
-    )
