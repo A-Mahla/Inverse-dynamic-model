@@ -1,4 +1,4 @@
-# Project 2: Inverse Dynamic Model
+# Inverse Dynamic Model
 
 ## Project Overview
 This project is focused on developing an Inverse Dynamic Model capable of annotating video frames. The primary aim is to extract and annotate actions from videos of people using software to accomplish tasks. This involves scraping videos, processing frames, and utilizing both Vision-Language Models (VLMs) and Language Learning Models (LLMs) for annotation.
@@ -34,8 +34,8 @@ To run the scripts and use the models effectively, ensure you have the following
 Clone this repository and install the required Python libraries:
 
 ```bash
-git clone [repository URL]
-cd [repository name]
+git clone https://github.com/A-Mahla/Inverse-dynamic-model.git
+cd Inverse-dynamic-model
 pip install -r requirements.txt
 ```
 
