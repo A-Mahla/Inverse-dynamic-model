@@ -9,6 +9,9 @@ from video_frames_creator.frame_manager import FrameManager
 
 
 class Pipeline:
+    """
+    pipeline to generate annotations for frames
+    """
 
     def __init__(self):
         self.df_frame_metadata = FrameManager.get_dataframe_metadata()

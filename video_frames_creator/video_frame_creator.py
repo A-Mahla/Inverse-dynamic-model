@@ -16,6 +16,9 @@ class VideoFrameMetaData(BaseModel):
 
 
 class VideoFrameCreator:
+    """
+    Cut the videos into frames and save the frames.
+    """
 
     def __init__(self):
         if not os.path.exists(VideoManager.metadata_file_path):
