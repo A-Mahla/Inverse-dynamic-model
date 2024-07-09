@@ -55,12 +55,13 @@ class VideoManager:
 
     base_dir = os.path.dirname(__file__)
     output_dir = os.path.join(base_dir, "downloads")
+    output_dir_video = os.path.join(output_dir, "videos")
     metadata_file_path = os.path.join(output_dir, "video_metadata.csv")
 
     @staticmethod
     def get_output_dir() -> str:
-        os.makedirs(VideoManager.output_dir, exist_ok=True)
-        return VideoManager.output_dir
+        os.makedirs(VideoManager.output_dir_video, exist_ok=True)
+        return VideoManager.output_dir_video
 
     @staticmethod
     def get_metadata_file_path() -> str:
@@ -78,7 +79,7 @@ class VideoManager:
     def get_video_frame(
         video_name: str,
     ) -> List[FrameMetadata]:
-        video_path = f"{VideoManager.output_dir}/{video_name}"
+        video_path = f"{VideoManager.output_dir_video}/{video_name}"
         video = cv2.VideoCapture(video_path)
         if not video.isOpened():
             raise ValueError("Error: Could not open video.")
@@ -102,9 +103,3 @@ class VideoManager:
                 cv2.CAP_PROP_POS_FRAMES, video.get(cv2.CAP_PROP_POS_FRAMES) + interval
             )
         return frames
-
-
-if __name__ == "__main__":
-    VideoManager.get_video_frame(
-        "Create a project folder (Visual Studio Code), create a file and open the Terminal (2⧸5).mp4"
-    )
