@@ -9,7 +9,7 @@ from vlm_annotation.annotation_manager import AnnotationManager
 def generate_markdown_from_dataframe():
     df = AnnotationManager.get_dataframe_metadata()
 
-    random_rows = df.sample(n=100, random_state=4)
+    random_rows = df.sample(n=50, random_state=11)
     if os.path.exists("output.md"):
         os.remove("output.md")
     with open("output.md", "w") as file:
