@@ -6,7 +6,6 @@ This project is focused on developing an Inverse Dynamic Model capable of annota
 ### Key Objectives
 - **Video Retrieval:** Collect videos of individuals using software to perform tasks.
 - **Action Extraction:** Use VLM prompts to extract actions from specific frames in both past and future contexts.
-- **Annotation:** Provide examples of videos with annotated frames.
 
 ## Pipeline
 Our project pipeline consists of the following steps:
