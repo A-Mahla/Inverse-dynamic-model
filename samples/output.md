@@ -268,34 +268,6 @@
 
 <br>
 
-## Title (video file name): Windows_10_Tutorial_Lesson_7_Shutdown__Hibernate__Standby_and_Restart.mp4
-### Frame filename: Windows_10_Tutorial_Lesson_7_Shutdown__Hibernate__Standby_and_Restart.mp4_frame_3844.jpg
-
-![Image](../video_frames_creator/videoframes/frames/Windows_10_Tutorial_Lesson_7_Shutdown__Hibernate__Standby_and_Restart.mp4_frame_3844.jpg)
-
-<br>
-
-**VLM annotation**: 
-*The image shows a computer screen with a Windows operating system. The user is likely working on a document, as there is a text editor open on the screen. The text editor is displaying a blank document, which suggests that the user might be in the process of creating or editing a new document. The user may be typing text, formatting the document, or adding images or other media. The presence of the text editor indicates that the user is engaged in some form of writing or content creation.*
-<br>
-
-**LLM Json annotation**: 
-```
-{
-    "annotation": {
-        "software": "Text Editor",
-        "accuracy": 0.75,
-        "features_used": "Text editing",
-        "past_actions": "Creating or editing a new document",
-        "future_actions": "Typing text, formatting the document, or adding images or other media"
-    }
-}
-```
-
----
-
-<br>
-
 ## Title (video file name): How_to_use_Zoom_AI_Companion_Meeting_Summary.mp4
 ### Frame filename: How_to_use_Zoom_AI_Companion_Meeting_Summary.mp4_frame_550.jpg
 
